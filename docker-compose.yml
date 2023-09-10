@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+
+  server:
+    build:
+      context: ./strawberry_backend
+      dockerfile: ./Dockerfile
+    depends_on:
+      - mariadb
+    restart: on-failure
+    volumes:
+      - ./logs:/home/data/logs:z
+    ports:
+      - 14565:14565
+
+  mariadb:
+    image: mariadb:latest
+    command: [
+            '--max_allowed_packet=32505856',
+            '--wait-timeout=604800',
+        ]
+    volumes:
+      - ./mariadb:/var/lib/mysql:z
+    ports:
+      - 3333:3333
+    env_file:
+      - ./mariadb/config.env
+

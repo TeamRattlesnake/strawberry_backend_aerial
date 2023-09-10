@@ -1,0 +1,5 @@
+{
+    "create_directory":"data/contexts/create",
+    "edit_directory":"data/contexts/edit",
+    "correct_directory":"data/contexts/correct"
+}

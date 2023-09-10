@@ -1,0 +1,5 @@
+strawberry_backend/data/logs/*.txt
+mariadb/*
+logs
+strawberry_backend/data/configs/database.json
+strawberry_backend/data/configs/server.json
