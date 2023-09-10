@@ -158,7 +158,7 @@ async def get_posts(
     "/api/v1/posts/{post_id}", response_model=PostResponse, tags=["Получение данных"]
 )
 async def get_post_id(MiniAppParams: Annotated[str, Header()], post_id):
-    return PostListResponse(
+    return PostResponse(
         status=0,
         description="ok",
         post=Post(
